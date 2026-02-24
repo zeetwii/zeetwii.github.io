@@ -1,0 +1,22 @@
+{
+  "collections": [
+    {
+      "hasSchema": true,
+      "name": "addendum"
+    },
+    {
+      "hasSchema": true,
+      "name": "home"
+    },
+    {
+      "hasSchema": true,
+      "name": "posts"
+    }
+  ],
+  "entries": {
+    "file:///c:/users/zeetw/documents/github/zeetwii.github.io/src/content/addendum.md": "addendum",
+    "file:///c:/users/zeetw/documents/github/zeetwii.github.io/src/content/home.md": "home",
+    "file:///c:/users/zeetw/documents/github/zeetwii.github.io/src/content/posts/costplus_interview.md.md": "posts",
+    "file:///c:/users/zeetw/documents/github/zeetwii.github.io/src/content/posts/cpt_interview_pterodactyl.md.md": "posts"
+  }
+}
