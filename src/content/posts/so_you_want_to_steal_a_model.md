@@ -1,6 +1,6 @@
 ---
 title: "So You want to steal a Model?"
-published: 2022-02-27
+published: 2026-02-27
 draft: false
 description: 'A breakdown of how much it costs and how difficult the most recent distillation attack against Anthropic was.'
 tags: ['Anthropic', 'Claude', 'hacking']
