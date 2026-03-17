@@ -1,7 +1,7 @@
 ---
 title: "So You want to steal a Model?"
 published: 2022-02-27
-draft: true
+draft: false
 description: 'A breakdown of how much it costs and how difficult the most recent distillation attack against Anthropic was.'
 tags: ['Anthropic', 'Claude', 'hacking']
 ---
@@ -36,4 +36,21 @@ Where:
 - Tokens per Interaction: As mentioned above, we'll use 8,000 tokens per interaction.
 - Number of Interactions: Anthropic lists 16 million interactions in total that were flagged as part of the attack.
 
-Using these numbers, we get a total cost of the attack to be: $3,200,000.  
+Using these numbers, we get a total cost of the attack to be: $3,200,000.  $3.2 million dollars is not a lot of money for a company or nation state to spend on stealing a model that could potentially be worth billions of dollars.  This is especially true when you consider that the cost of training a model like Claude from scratch would be in the hundreds of millions of dollars, if not more.  
+
+In a weird way, this is actually a problem for Anthropic and other cloud based model vendors.  Even if they double the price of their API, the cost of performing the attack would still be so cheap that it would still be worth it for a company or nation state to steal the model.  In a weird way, the attacker is actually the best customer they will every have because there is no price they won't pay for API access.  This means they can't use the classic Steam approch of making it easier to buy the game than to steal it, because there is no price they can set that would discourage stealing the model and not also cause them to lose customers.  
+
+##### Indidual Breakdown
+
+Antrhopic breaks down the total attack and lists several companies by name, so I thought it would be interesting to break down the cost of the attack for each company using the same formula as above.  This is not an exact science, as we don't know individual token usage or how many tokens were input vs output, but it should give us a good estimate of the cost of the attack for each company.  Here is the breakdown:
+
+| Company Name | Number of Interactions | Estimated Cost of Attack |
+|--------------|------------------------|-------------------------|
+| DeepSeek    | 150,000              | $30,000                |
+| Moonshot AI   | 3,400,000              | $680,000                |
+| MiniMax | 13,000,000 | $2,600,000                |
+
+### Conclusion
+
+The cost of performing a distillation attack against a model like Claude is shockingly low, especially when you consider the potential value of the model.  This raises some serious questions about the current state of the LLM industry, and how we value these companies.  If the models these companies have are not unique and can be easily replicated, then we need to rethink how we regulate them, and how we value them as companies.  Model vendors need to start thinking about how they can detect and prevent these types of attacks, which will require more heavily analysis and monitoring of their API usage, response patterns, and user behavior.  This is not an easy problem to solve, but it is one that needs to be addressed if these companies want to continue to be successful in the long term.  
+
