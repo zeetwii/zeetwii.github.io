@@ -1,12 +1,12 @@
 ---
-title: "So You want to steal a Model?"
+title: "So you want to steal a model?"
 published: 2026-02-27
 draft: false
 description: 'A breakdown of how much it costs and how difficult the most recent distillation attack against Anthropic was.'
 tags: ['Anthropic', 'Claude', 'hacking']
 ---
 
-## So You want to steal a Model?
+## So you want to steal a model?
 
 Early this week, Anthropic released a [report](https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks) about the latest distillation attack they detected against there models.  While they don't explictly go over the cost of performing the attacks, it does bring to light a glaring error with how we currently think of both AI policy in the US, and what it means for LLM vendors as an industry.  
 
