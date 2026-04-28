@@ -1,78 +1,60 @@
 {
-  "$ref": "#/definitions/posts",
-  "definitions": {
-    "posts": {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "published": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "draft": {
+      "default": false,
+      "type": "boolean"
+    },
+    "description": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "series": {
+      "type": "string"
+    },
+    "tags": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "coverImage": {
       "type": "object",
       "properties": {
-        "title": {
+        "src": {
           "type": "string"
         },
-        "published": {
-          "anyOf": [
-            {
-              "type": "string",
-              "format": "date-time"
-            },
-            {
-              "type": "string",
-              "format": "date"
-            },
-            {
-              "type": "integer",
-              "format": "unix-time"
-            }
-          ]
-        },
-        "draft": {
-          "type": "boolean",
-          "default": false
-        },
-        "description": {
-          "type": "string"
-        },
-        "author": {
-          "type": "string"
-        },
-        "series": {
-          "type": "string"
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "default": []
-        },
-        "coverImage": {
-          "type": "object",
-          "properties": {
-            "src": {
-              "type": "string"
-            },
-            "alt": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "src",
-            "alt"
-          ],
-          "additionalProperties": false
-        },
-        "toc": {
-          "type": "boolean",
-          "default": true
-        },
-        "$schema": {
+        "alt": {
           "type": "string"
         }
       },
       "required": [
-        "title",
-        "published"
+        "src",
+        "alt"
       ],
       "additionalProperties": false
+    },
+    "toc": {
+      "default": true,
+      "type": "boolean"
+    },
+    "$schema": {
+      "type": "string"
     }
   },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  "required": [
+    "title",
+    "published"
+  ]
 }
