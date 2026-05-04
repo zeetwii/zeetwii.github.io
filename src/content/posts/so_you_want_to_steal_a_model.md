@@ -32,11 +32,11 @@ Cost = (Number of Interactions) * (Tokens per Interaction) * (Cost per Token)
 
 Where:
 
-- Cost per Token: We'll use Anthropic's most expensive model, Opus 4.6, which has a cost of $25 per million tokens, or $0.000025 per token.
+- Cost per Token: We'll use Anthropic's most expensive model, Opus 4.6, which has a cost of \$25 per million tokens, or \$0.000025 per token.
 - Tokens per Interaction: As mentioned above, we'll use 8,000 tokens per interaction.
 - Number of Interactions: Anthropic lists 16 million interactions in total that were flagged as part of the attack.
 
-Using these numbers, we get a total cost of the attack to be: $3,200,000.  $3.2 million dollars is not a lot of money for a company or nation state to spend on stealing a model that could potentially be worth billions of dollars.  This is especially true when you consider that the cost of training a model like Claude from scratch would be in the hundreds of millions of dollars, if not more.  
+Using these numbers, we get a total cost of the attack to be: \$3,200,000.  \$3.2 million dollars is not a lot of money for a company or nation state to spend on stealing a model that could potentially be worth billions of dollars.  This is especially true when you consider that the cost of training a model like Claude from scratch would be in the hundreds of millions of dollars, if not more.  
 
 In a weird way, this is actually a problem for Anthropic and other cloud based model vendors.  Even if they double the price of their API, the cost of performing the attack would still be so cheap that it would still be worth it for a company or nation state to steal the model.  In a weird way, the attacker is actually the best customer they will every have because there is no price they won't pay for API access.  This means they can't use the classic Steam approch of making it easier to buy the game than to steal it, because there is no price they can set that would discourage stealing the model and not also cause them to lose customers.  
 
