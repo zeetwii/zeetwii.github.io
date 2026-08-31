@@ -7,7 +7,7 @@ on:
     branches: [ main ]
   schedule:
     # Trigger the workflow every day at 06:06 UTC
-    - cron: '6 6 * * *' 
+    - cron: '6 6 * * *'
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
@@ -17,22 +17,37 @@ permissions:
   pages: write
   id-token: write
 
+# Let a running deployment finish, but only keep the newest queued run
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      GH_CONTRIB_TOKEN: ${{ secrets.GH_CONTRIB_TOKEN }}
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        # `postbuild` runs pagefind over dist/ automatically
+        run: npm run build
         env:
           GH_CONTRIB_TOKEN: ${{ secrets.GH_CONTRIB_TOKEN }}
+
+      - name: Upload build artifact
+        uses: actions/upload-pages-artifact@v5
         with:
-          # path: . # The root location of your Astro project inside the repository. (optional)
-          node-version: 24 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
-          # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+          path: dist/
 
   deploy:
     needs: build
@@ -43,4 +58,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
